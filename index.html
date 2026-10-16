@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Master</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    
+    <div class="container">
+        <!-- Pantalla de Configuración -->
+        <div id="setup-screen" class="screen active">
+            <div class="logo-container">
+                <span class="logo-icon">🧠</span>
+                <h1 data-i18n="title">Trivia Master</h1>
+            </div>
+            <p class="subtitle" data-i18n="subtitle">Pon a prueba tus conocimientos y supera tus récords.</p>
+            
+            <div class="form-group">
+                <label for="language" data-i18n="langLabel">Idioma:</label>
+                <div class="select-wrapper">
+                    <select id="language">
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="en">🇬🇧 English</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="difficulty" data-i18n="diffLabel">Dificultad:</label>
+                <div class="select-wrapper">
+                    <select id="difficulty">
+                        <option value="easy" data-i18n="diffEasy">🟢 Fácil</option>
+                        <option value="medium" data-i18n="diffMedium">🟡 Media</option>
+                        <option value="hard" data-i18n="diffHard">🔴 Difícil</option>
+                    </select>
+                </div>
+            </div>
+            <button id="start-btn" class="btn primary-btn" data-i18n="startBtn">¡Comenzar Desafío!</button>
+        </div>
+
+        <!-- Pantalla de Juego -->
+        <div id="game-screen" class="screen">
+            <div class="game-header">
+                <div class="badge" id="question-counter">Pregunta 1/5</div>
+                <div class="score-badge" id="score-display">⭐ 0 pts</div>
+            </div>
+            
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+
+            <div class="question-container">
+                <h2 id="question-text">Cargando pregunta...</h2>
+            </div>
+            
+            <div id="options-container" class="options-grid"></div>
+        </div>
+
+        <!-- Pantalla de Resultados -->
+        <div id="result-screen" class="screen">
+            <div class="result-icon">🏆</div>
+            <h2 data-i18n="finished">¡Juego Completado!</h2>
+            <p class="result-message" data-i18n="resultMsg">Has finalizado todas las preguntas con éxito.</p>
+            <div class="score-card">
+                <span id="final-score">Tu puntaje final es: 0 / 50</span>
+            </div>
+            <button id="restart-btn" class="btn primary-btn" data-i18n="restartBtn">Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
